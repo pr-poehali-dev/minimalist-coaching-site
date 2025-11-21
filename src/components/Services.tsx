@@ -4,7 +4,7 @@ import Icon from '@/components/ui/icon';
 const services = [
   {
     title: 'Разовая сессия',
-    image: 'https://cdn.poehali.dev/files/88e33ac5-0950-4a77-9953-b28a837f8156.jpg',
+    image: 'https://cdn.poehali.dev/projects/aaa9eff3-a244-46de-b30e-1d43bbd831d1/files/871822f4-db8e-426e-9685-2930563a81e0.jpg',
     description:
       'Индивидуальная консультация для решения актуальных задач. Если вы чувствуете в глубине души, что хотите изменить что-то в отношениях с близкими, найти энергию, навести порядок в мыслях, прийти в гармонию с собой, — эта сессия для вас.',
     details:
@@ -37,7 +37,7 @@ const services = [
   },
   {
     title: '(Индивидуальное) LEGO моделирование',
-    image: 'https://cdn.poehali.dev/files/af7550a1-310c-4671-a83b-cb6aedc073ed.jpg',
+    image: 'https://cdn.poehali.dev/files/c669462d-7ba1-48b0-ba5f-a6489b302c82.jpg',
     description:
       'Личное путешествие к решениям и осознаниям. В этой сессии вы исследуете свои вопросы и задачи через творческую работу с LEGO под внимательным сопровождением коуча.',
     details:
@@ -77,7 +77,7 @@ const services = [
   },
   {
     title: 'Корпоративная сессия LEGO Serious Play',
-    image: 'https://cdn.poehali.dev/files/2de21e73-6ea0-4db1-b049-7130752c3a06.jpg',
+    image: 'https://cdn.poehali.dev/files/e165d54b-3f62-4dfe-9634-5206b0bcb05e.jpg',
     description:
       'Групповая сессия LEGO Serious Play — развитие командного мышления и креативности. Для укрепления командного взаимодействия, стимулирования креативных решений и повышения эффективности работы.',
     details:
@@ -103,38 +103,38 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <div className="text-center space-y-4 mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Услуги</h2>
-          <p className="text-xl text-gray-600">Продуктовая линейка для вашей трансформации</p>
+          <p className="text-xl text-gray-700">Продуктовая линейка для вашей трансформации</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col animate-fade-in"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col animate-fade-in border border-gray-100"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-64 overflow-hidden">
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">{service.description}</p>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{service.details}</p>
+                <p className="text-gray-800 mb-4 leading-relaxed font-medium">{service.description}</p>
+                <p className="text-gray-700 text-sm mb-4 leading-relaxed">{service.details}</p>
                 <div className="mt-auto space-y-4">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="flex items-center gap-2 text-sm text-gray-700 font-medium">
                     <Icon name="MapPin" size={16} className="text-accent" />
                     <span>{service.format}</span>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 bg-accent/5 rounded-xl p-4 border border-accent/20">
                     {service.prices.map((price, idx) => (
                       <div key={idx} className="flex justify-between items-center">
-                        <span className="text-gray-600">{price.duration}</span>
+                        <span className="text-gray-800 font-medium">{price.duration}</span>
                         <span className="text-2xl font-bold text-accent">{price.price}</span>
                       </div>
                     ))}
                   </div>
-                  <Button onClick={scrollToContact} className="w-full bg-accent hover:bg-accent-dark">
+                  <Button onClick={scrollToContact} className="w-full bg-accent hover:bg-accent/90 text-white font-semibold">
                     Записаться
                   </Button>
                 </div>
@@ -143,12 +143,10 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-primary/5 rounded-2xl p-8 animate-fade-in">
-          <p className="text-gray-700 leading-relaxed text-center">
-            <strong>Также доступно:</strong> песочное моделирование в корпоративном сегменте как тимбилдинг мероприятия.
-            Песок раскрывает внутренний мир, помогает избавиться от ограничений и блоков за пару часов. Такой способ дает
-            возможность увидеть ключ для изменения ситуации и сразу начать действовать по-новому для получения нужного
-            результата.
+        <div className="mt-16 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 animate-fade-in border-l-4 border-accent">
+          <p className="text-gray-800 leading-relaxed text-center font-medium">
+            <strong className="text-gray-900">Также доступно:</strong> песочное моделирование в корпоративном сегменте как тимбилдинг мероприятия.
+            Песок раскрывает внутренний мир, помогает избавиться от ограничений и блоков за пару часов.
           </p>
         </div>
       </div>

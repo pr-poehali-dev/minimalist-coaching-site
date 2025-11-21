@@ -45,22 +45,10 @@ const Approach = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-10 shadow-lg animate-fade-in">
-            <div className="flex items-start gap-6">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <Icon name="Sparkles" size={24} className="text-accent" />
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-900">Уникальность подхода</h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  Сочетание Lego®, песочного моделирования и классического коучинга создаёт безопасное пространство для
-                  трансформации. Вы получаете не только осознанность, но и практические инструменты для достижения целей.
-                </p>
-                <p className="text-accent font-semibold text-lg">
-                  Результат: ясность, энергия и конкретный план действий уже после первой сессии
-                </p>
-              </div>
-            </div>
+          <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-10 shadow-lg animate-fade-in border-l-4 border-accent">
+            <p className="text-accent font-bold text-2xl text-center">
+              ✨ Результат: ясность, энергия и конкретный план действий уже после первой сессии
+            </p>
           </div>
         </div>
       </div>
