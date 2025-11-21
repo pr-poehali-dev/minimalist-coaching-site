@@ -14,13 +14,38 @@ const Contact = () => {
     sessionType: 'session',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: 'Заявка отправлена!',
-      description: 'Я свяжусь с вами в ближайшее время.',
-    });
-    setFormData({ name: '', phone: '', message: '', sessionType: 'session' });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/d6627f77-4f2b-49fd-9e40-42581465079a', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: 'Я свяжусь с вами в ближайшее время.',
+        });
+        setFormData({ name: '', phone: '', message: '', sessionType: 'session' });
+      } else {
+        toast({
+          title: 'Ошибка',
+          description: 'Не удалось отправить заявку. Попробуйте позже.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось отправить заявку. Попробуйте позже.',
+        variant: 'destructive',
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

@@ -66,7 +66,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     """
     
     msg = MIMEMultipart()
-    msg['From'] = 'noreply@poehali.dev'
+    msg['From'] = os.environ.get('SMTP_USER', 'noreply@poehali.dev')
     msg['To'] = 'boss-357@mail.ru'
     msg['Subject'] = f'Новая заявка: {session_name}'
     
