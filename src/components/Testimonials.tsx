@@ -15,6 +15,14 @@ const testimonials = [
     image: 'https://cdn.poehali.dev/files/33d8c869-27c2-4e92-905b-c4552cf1894a.jpg',
     type: 'image',
   },
+  {
+    image: 'https://cdn.poehali.dev/files/f0a69a9f-b79f-43f1-9d34-1f7e61499f4e.jpg',
+    type: 'image',
+  },
+  {
+    image: 'https://cdn.poehali.dev/files/c11507c7-f239-4be4-b56c-8146b6134e74.jpg',
+    type: 'image',
+  },
 ];
 
 const Testimonials = () => {
