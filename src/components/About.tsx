@@ -8,24 +8,24 @@ const About = () => {
             <p className="text-xl text-gray-600">Максимов Вячеслав</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
-            <div className="bg-gray-50 rounded-2xl p-8 space-y-4">
-              <h3 className="text-2xl font-bold text-gray-900">Авторский стиль работы</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 text-accent font-bold text-lg">45%</div>
+          <div className="space-y-6 animate-fade-in">
+            <div className="bg-gray-50 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Авторский стиль работы</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-accent font-bold text-3xl mb-2">45%</div>
                   <div className="text-gray-700">Мягкий, поддерживающий подход</div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 text-accent font-bold text-lg">10%</div>
+                <div className="text-center">
+                  <div className="text-accent font-bold text-3xl mb-2">10%</div>
                   <div className="text-gray-700">Прямой, честный</div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 text-accent font-bold text-lg">30%</div>
+                <div className="text-center">
+                  <div className="text-accent font-bold text-3xl mb-2">30%</div>
                   <div className="text-gray-700">Осознанность + действия</div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 text-accent font-bold text-lg">15%</div>
+                <div className="text-center">
+                  <div className="text-accent font-bold text-3xl mb-2">15%</div>
                   <div className="text-gray-700">Арт-коучинг</div>
                 </div>
               </div>
