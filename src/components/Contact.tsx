@@ -1,56 +1,17 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { useEffect } from 'react';
 import Icon from '@/components/ui/icon';
-import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: '',
-    sessionType: 'session',
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://forms.yandex.ru/_static/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
     
-    try {
-      const response = await fetch('https://functions.poehali.dev/d6627f77-4f2b-49fd-9e40-42581465079a', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (response.ok) {
-        toast({
-          title: 'Заявка отправлена!',
-          description: 'Я свяжусь с вами в ближайшее время.',
-        });
-        setFormData({ name: '', phone: '', message: '', sessionType: 'session' });
-      } else {
-        toast({
-          title: 'Ошибка',
-          description: 'Не удалось отправить заявку. Попробуйте позже.',
-          variant: 'destructive',
-        });
-      }
-    } catch (error) {
-      toast({
-        title: 'Ошибка',
-        description: 'Не удалось отправить заявку. Попробуйте позже.',
-        variant: 'destructive',
-      });
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <section id="contact" className="py-24 bg-white">
@@ -65,61 +26,16 @@ const Contact = () => {
             <div className="space-y-8 animate-fade-in">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Записаться на сессию</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Input
-                      type="text"
-                      name="name"
-                      placeholder="Ваше имя"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="tel"
-                      name="phone"
-                      placeholder="Телефон"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <select
-                      name="sessionType"
-                      value={formData.sessionType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                    >
-                      <option value="session">Разовая сессия</option>
-                      <option value="business">Бизнес-коучинг</option>
-                      <option value="month">Сопровождение 1 месяц</option>
-                      <option value="lego-individual">LEGO (индивидуально)</option>
-                      <option value="lego-group">LEGO (групповое)</option>
-                      <option value="sand-individual">Песочное (индивидуально)</option>
-                      <option value="sand-group">Песочное (группа)</option>
-                      <option value="corporate">Корпоративная сессия</option>
-                      <option value="free-call">Бесплатный 15-минутный созвон</option>
-                    </select>
-                  </div>
-                  <div>
-                    <Textarea
-                      name="message"
-                      placeholder="Расскажите о вашем запросе"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full bg-accent hover:bg-accent-dark text-lg py-6">
-                    Отправить заявку
-                  </Button>
-                </form>
+                <div className="w-full max-w-[650px]">
+                  <iframe 
+                    src="https://forms.yandex.ru/u/692da2df1f1eb57fc3ef1a7a?iframe=1" 
+                    frameBorder="0" 
+                    name="ya-form-692da2df1f1eb57fc3ef1a7a" 
+                    width="100%"
+                    height="600"
+                    className="border-0"
+                  />
+                </div>
               </div>
             </div>
 
