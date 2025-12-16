@@ -51,7 +51,7 @@ const About = () => {
                 
                 <div className="space-y-3">
                   <p className="text-gray-700 leading-relaxed">
-                    <strong>За 18 лет в найме работал только 3,5 года.</strong> Прошёл путь в 4 собственных бизнесах и 3 в партнёрстве:
+                    <strong>За 18 лет в найме работал только 3,5 года.</strong> Прошёл путь в 5 собственных бизнесах и 3 в партнёрстве:
                   </p>
                   
                   <div className="pl-4 space-y-2">
